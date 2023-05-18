@@ -28,550 +28,519 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
-            "",
-            "1",
-            "1",
-            "1",
-            "1",
-            "1",
-            "1"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
-            "",
-            "1",
-            "1",
-            "1",
-            "1",
-            "1",
-            "1"}, -1);
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.cadastro = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.vendas = new System.Windows.Forms.TabPage();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.veiculo = new System.Windows.Forms.ColumnHeader();
-            this.marca = new System.Windows.Forms.ColumnHeader();
-            this.ano = new System.Windows.Forms.ColumnHeader();
-            this.tipo_c = new System.Windows.Forms.ColumnHeader();
-            this.cor = new System.Windows.Forms.ColumnHeader();
-            this.preco = new System.Windows.Forms.ColumnHeader();
-            this.compras = new System.Windows.Forms.TabPage();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
-            this.tabControl1.SuspendLayout();
-            this.cadastro.SuspendLayout();
-            this.vendas.SuspendLayout();
-            this.compras.SuspendLayout();
-            this.SuspendLayout();
+            ListViewItem listViewItem1 = new ListViewItem(new string[] { "", "1", "1", "1", "1", "1", "1" }, -1);
+            ListViewItem listViewItem2 = new ListViewItem(new string[] { "", "1", "1", "1", "1", "1", "1" }, -1);
+            textBox1 = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
+            inputMarca = new TextBox();
+            inputVeiculo = new ComboBox();
+            inputAno = new TextBox();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            inputTipoCombustivel = new TextBox();
+            inputCor = new TextBox();
+            label6 = new Label();
+            label7 = new Label();
+            tabControl1 = new TabControl();
+            cadastro = new TabPage();
+            button2 = new Button();
+            button1 = new Button();
+            label8 = new Label();
+            vendas = new TabPage();
+            button7 = new Button();
+            button6 = new Button();
+            textBox7 = new TextBox();
+            button5 = new Button();
+            button4 = new Button();
+            button3 = new Button();
+            listView1 = new ListView();
+            veiculo = new ColumnHeader();
+            marca = new ColumnHeader();
+            ano = new ColumnHeader();
+            tipo_c = new ColumnHeader();
+            cor = new ColumnHeader();
+            preco = new ColumnHeader();
+            compras = new TabPage();
+            button8 = new Button();
+            button9 = new Button();
+            textBox8 = new TextBox();
+            button10 = new Button();
+            button11 = new Button();
+            button12 = new Button();
+            listView2 = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
+            columnHeader5 = new ColumnHeader();
+            columnHeader6 = new ColumnHeader();
+            inputPreco = new TextBox();
+            tabControl1.SuspendLayout();
+            cadastro.SuspendLayout();
+            vendas.SuspendLayout();
+            compras.SuspendLayout();
+            SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(557, 21);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 27);
-            this.textBox1.TabIndex = 0;
+            textBox1.Enabled = false;
+            textBox1.Location = new Point(557, 21);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(228, 27);
+            textBox1.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(397, 45);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Venda e Compra de Veículos";
+            label1.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(12, 10);
+            label1.Name = "label1";
+            label1.Size = new Size(397, 45);
+            label1.TabIndex = 1;
+            label1.Text = "Venda e Compra de Veículos";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(557, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Saldo:";
+            label2.AutoSize = true;
+            label2.Location = new Point(557, 3);
+            label2.Name = "label2";
+            label2.Size = new Size(39, 15);
+            label2.TabIndex = 2;
+            label2.Text = "Saldo:";
             // 
-            // textBox2
+            // inputMarca
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBox2.Location = new System.Drawing.Point(387, 27);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(360, 23);
-            this.textBox2.TabIndex = 3;
+            inputMarca.BackColor = SystemColors.InactiveBorder;
+            inputMarca.CharacterCasing = CharacterCasing.Upper;
+            inputMarca.Location = new Point(387, 27);
+            inputMarca.Name = "inputMarca";
+            inputMarca.Size = new Size(360, 23);
+            inputMarca.TabIndex = 3;
             // 
-            // comboBox1
+            // inputVeiculo
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Carro",
-            "Moto",
-            "Caminhão",
-            "Bicicleta",
-            "Barco",
-            "Avião"});
-            this.comboBox1.Location = new System.Drawing.Point(6, 27);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(353, 23);
-            this.comboBox1.TabIndex = 4;
+            inputVeiculo.BackColor = SystemColors.InactiveBorder;
+            inputVeiculo.FormattingEnabled = true;
+            inputVeiculo.Items.AddRange(new object[] { "Carro", "Moto", "Caminhão", "Bicicleta", "Barco", "Avião" });
+            inputVeiculo.Location = new Point(6, 27);
+            inputVeiculo.Name = "inputVeiculo";
+            inputVeiculo.Size = new Size(353, 23);
+            inputVeiculo.TabIndex = 4;
             // 
-            // textBox3
+            // inputAno
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBox3.Location = new System.Drawing.Point(6, 96);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(353, 23);
-            this.textBox3.TabIndex = 5;
+            inputAno.BackColor = SystemColors.InactiveBorder;
+            inputAno.Location = new Point(6, 96);
+            inputAno.Name = "inputAno";
+            inputAno.Size = new Size(353, 23);
+            inputAno.TabIndex = 5;
+            inputAno.KeyPress += inputAno_KeyPress;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 15);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Veículo";
+            label3.AutoSize = true;
+            label3.Location = new Point(6, 9);
+            label3.Name = "label3";
+            label3.Size = new Size(45, 15);
+            label3.TabIndex = 6;
+            label3.Text = "Veículo";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(387, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 15);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Marca";
+            label4.AutoSize = true;
+            label4.Location = new Point(387, 9);
+            label4.Name = "label4";
+            label4.Size = new Size(40, 15);
+            label4.TabIndex = 7;
+            label4.Text = "Marca";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 78);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 15);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Ano";
+            label5.AutoSize = true;
+            label5.Location = new Point(6, 78);
+            label5.Name = "label5";
+            label5.Size = new Size(29, 15);
+            label5.TabIndex = 8;
+            label5.Text = "Ano";
             // 
-            // textBox4
+            // inputTipoCombustivel
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBox4.Location = new System.Drawing.Point(387, 96);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(360, 23);
-            this.textBox4.TabIndex = 9;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            inputTipoCombustivel.BackColor = SystemColors.InactiveBorder;
+            inputTipoCombustivel.CharacterCasing = CharacterCasing.Upper;
+            inputTipoCombustivel.Location = new Point(387, 96);
+            inputTipoCombustivel.Name = "inputTipoCombustivel";
+            inputTipoCombustivel.Size = new Size(360, 23);
+            inputTipoCombustivel.TabIndex = 9;
+            inputTipoCombustivel.TextChanged += textBox4_TextChanged;
             // 
-            // textBox5
+            // inputCor
             // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBox5.Location = new System.Drawing.Point(6, 164);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(353, 23);
-            this.textBox5.TabIndex = 10;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            inputCor.BackColor = SystemColors.InactiveBorder;
+            inputCor.CharacterCasing = CharacterCasing.Upper;
+            inputCor.Location = new Point(6, 164);
+            inputCor.Name = "inputCor";
+            inputCor.Size = new Size(353, 23);
+            inputCor.TabIndex = 10;
+            inputCor.TextChanged += textBox5_TextChanged;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(387, 78);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(116, 15);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Tipo de Combustível";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            label6.AutoSize = true;
+            label6.Location = new Point(387, 78);
+            label6.Name = "label6";
+            label6.Size = new Size(116, 15);
+            label6.TabIndex = 11;
+            label6.Text = "Tipo de Combustível";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 144);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(26, 15);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Cor";
+            label7.AutoSize = true;
+            label7.Location = new Point(7, 144);
+            label7.Name = "label7";
+            label7.Size = new Size(26, 15);
+            label7.TabIndex = 12;
+            label7.Text = "Cor";
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.cadastro);
-            this.tabControl1.Controls.Add(this.vendas);
-            this.tabControl1.Controls.Add(this.compras);
-            this.tabControl1.Location = new System.Drawing.Point(13, 54);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(772, 317);
-            this.tabControl1.TabIndex = 14;
+            tabControl1.Controls.Add(cadastro);
+            tabControl1.Controls.Add(vendas);
+            tabControl1.Controls.Add(compras);
+            tabControl1.Location = new Point(13, 54);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(772, 317);
+            tabControl1.TabIndex = 14;
             // 
             // cadastro
             // 
-            this.cadastro.BackColor = System.Drawing.Color.AliceBlue;
-            this.cadastro.Controls.Add(this.button2);
-            this.cadastro.Controls.Add(this.button1);
-            this.cadastro.Controls.Add(this.label8);
-            this.cadastro.Controls.Add(this.textBox6);
-            this.cadastro.Controls.Add(this.comboBox1);
-            this.cadastro.Controls.Add(this.textBox2);
-            this.cadastro.Controls.Add(this.label7);
-            this.cadastro.Controls.Add(this.textBox3);
-            this.cadastro.Controls.Add(this.label6);
-            this.cadastro.Controls.Add(this.label3);
-            this.cadastro.Controls.Add(this.textBox5);
-            this.cadastro.Controls.Add(this.label4);
-            this.cadastro.Controls.Add(this.textBox4);
-            this.cadastro.Controls.Add(this.label5);
-            this.cadastro.Location = new System.Drawing.Point(4, 24);
-            this.cadastro.Name = "cadastro";
-            this.cadastro.Padding = new System.Windows.Forms.Padding(3);
-            this.cadastro.Size = new System.Drawing.Size(764, 289);
-            this.cadastro.TabIndex = 0;
-            this.cadastro.Text = "Cadastro";
+            cadastro.BackColor = Color.AliceBlue;
+            cadastro.Controls.Add(inputPreco);
+            cadastro.Controls.Add(button2);
+            cadastro.Controls.Add(button1);
+            cadastro.Controls.Add(label8);
+            cadastro.Controls.Add(inputVeiculo);
+            cadastro.Controls.Add(inputMarca);
+            cadastro.Controls.Add(label7);
+            cadastro.Controls.Add(inputAno);
+            cadastro.Controls.Add(label6);
+            cadastro.Controls.Add(label3);
+            cadastro.Controls.Add(inputCor);
+            cadastro.Controls.Add(label4);
+            cadastro.Controls.Add(inputTipoCombustivel);
+            cadastro.Controls.Add(label5);
+            cadastro.Location = new Point(4, 24);
+            cadastro.Name = "cadastro";
+            cadastro.Padding = new Padding(3);
+            cadastro.Size = new Size(764, 289);
+            cadastro.TabIndex = 0;
+            cadastro.Text = "Cadastro";
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button2.ForeColor = System.Drawing.SystemColors.Window;
-            this.button2.Location = new System.Drawing.Point(387, 226);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 33);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Limpar";
-            this.button2.UseVisualStyleBackColor = false;
+            button2.BackColor = Color.CornflowerBlue;
+            button2.ForeColor = SystemColors.Window;
+            button2.Location = new Point(387, 226);
+            button2.Name = "button2";
+            button2.Size = new Size(155, 33);
+            button2.TabIndex = 16;
+            button2.Text = "Limpar";
+            button2.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Green;
-            this.button1.ForeColor = System.Drawing.SystemColors.Window;
-            this.button1.Location = new System.Drawing.Point(204, 226);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 33);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Adicionar";
-            this.button1.UseVisualStyleBackColor = false;
+            button1.BackColor = Color.Green;
+            button1.ForeColor = SystemColors.Window;
+            button1.Location = new Point(204, 226);
+            button1.Name = "button1";
+            button1.Size = new Size(155, 33);
+            button1.TabIndex = 15;
+            button1.Text = "Adicionar";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(387, 146);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(37, 15);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Preço";
-            // 
-            // textBox6
-            // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBox6.Location = new System.Drawing.Point(387, 164);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(360, 23);
-            this.textBox6.TabIndex = 13;
+            label8.AutoSize = true;
+            label8.Location = new Point(387, 146);
+            label8.Name = "label8";
+            label8.Size = new Size(37, 15);
+            label8.TabIndex = 14;
+            label8.Text = "Preço";
             // 
             // vendas
             // 
-            this.vendas.BackColor = System.Drawing.Color.AliceBlue;
-            this.vendas.Controls.Add(this.button7);
-            this.vendas.Controls.Add(this.button6);
-            this.vendas.Controls.Add(this.textBox7);
-            this.vendas.Controls.Add(this.button5);
-            this.vendas.Controls.Add(this.button4);
-            this.vendas.Controls.Add(this.button3);
-            this.vendas.Controls.Add(this.listView1);
-            this.vendas.Location = new System.Drawing.Point(4, 24);
-            this.vendas.Name = "vendas";
-            this.vendas.Padding = new System.Windows.Forms.Padding(3);
-            this.vendas.Size = new System.Drawing.Size(764, 289);
-            this.vendas.TabIndex = 1;
-            this.vendas.Text = "Vendas";
+            vendas.BackColor = Color.AliceBlue;
+            vendas.Controls.Add(button7);
+            vendas.Controls.Add(button6);
+            vendas.Controls.Add(textBox7);
+            vendas.Controls.Add(button5);
+            vendas.Controls.Add(button4);
+            vendas.Controls.Add(button3);
+            vendas.Controls.Add(listView1);
+            vendas.Location = new Point(4, 24);
+            vendas.Name = "vendas";
+            vendas.Padding = new Padding(3);
+            vendas.Size = new Size(764, 289);
+            vendas.TabIndex = 1;
+            vendas.Text = "Vendas";
             // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.Color.MediumPurple;
-            this.button7.ForeColor = System.Drawing.SystemColors.Window;
-            this.button7.Location = new System.Drawing.Point(532, 46);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(110, 23);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Gravar em XML";
-            this.button7.UseVisualStyleBackColor = false;
+            button7.BackColor = Color.MediumPurple;
+            button7.ForeColor = SystemColors.Window;
+            button7.Location = new Point(532, 46);
+            button7.Name = "button7";
+            button7.Size = new Size(110, 23);
+            button7.TabIndex = 6;
+            button7.Text = "Gravar em XML";
+            button7.UseVisualStyleBackColor = false;
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button6.ForeColor = System.Drawing.SystemColors.Window;
-            this.button6.Location = new System.Drawing.Point(273, 6);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Buscar";
-            this.button6.UseVisualStyleBackColor = false;
+            button6.BackColor = Color.CornflowerBlue;
+            button6.ForeColor = SystemColors.Window;
+            button6.Location = new Point(273, 6);
+            button6.Name = "button6";
+            button6.Size = new Size(75, 23);
+            button6.TabIndex = 5;
+            button6.Text = "Buscar";
+            button6.UseVisualStyleBackColor = false;
             // 
             // textBox7
             // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBox7.Location = new System.Drawing.Point(6, 6);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(261, 23);
-            this.textBox7.TabIndex = 4;
+            textBox7.BackColor = SystemColors.InactiveBorder;
+            textBox7.Location = new Point(6, 6);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(261, 23);
+            textBox7.TabIndex = 4;
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.button5.ForeColor = System.Drawing.SystemColors.Window;
-            this.button5.Location = new System.Drawing.Point(648, 46);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(110, 23);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Abrir o XML";
-            this.button5.UseVisualStyleBackColor = false;
+            button5.BackColor = Color.MediumSlateBlue;
+            button5.ForeColor = SystemColors.Window;
+            button5.Location = new Point(648, 46);
+            button5.Name = "button5";
+            button5.Size = new Size(110, 23);
+            button5.TabIndex = 3;
+            button5.Text = "Abrir o XML";
+            button5.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button4.ForeColor = System.Drawing.SystemColors.Window;
-            this.button4.Location = new System.Drawing.Point(122, 46);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(110, 23);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Editar";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            button4.BackColor = Color.CornflowerBlue;
+            button4.ForeColor = SystemColors.Window;
+            button4.Location = new Point(122, 46);
+            button4.Name = "button4";
+            button4.Size = new Size(110, 23);
+            button4.TabIndex = 2;
+            button4.Text = "Editar";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.ForeColor = System.Drawing.SystemColors.Window;
-            this.button3.Location = new System.Drawing.Point(6, 46);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(110, 23);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Excluir";
-            this.button3.UseVisualStyleBackColor = false;
+            button3.BackColor = Color.Red;
+            button3.ForeColor = SystemColors.Window;
+            button3.Location = new Point(6, 46);
+            button3.Name = "button3";
+            button3.Size = new Size(110, 23);
+            button3.TabIndex = 1;
+            button3.Text = "Excluir";
+            button3.UseVisualStyleBackColor = false;
             // 
             // listView1
             // 
-            this.listView1.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.veiculo,
-            this.marca,
-            this.ano,
-            this.tipo_c,
-            this.cor,
-            this.preco});
-            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
-            this.listView1.Location = new System.Drawing.Point(6, 75);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(752, 208);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.List;
+            listView1.BackColor = SystemColors.InactiveBorder;
+            listView1.Columns.AddRange(new ColumnHeader[] { veiculo, marca, ano, tipo_c, cor, preco });
+            listView1.Items.AddRange(new ListViewItem[] { listViewItem1 });
+            listView1.Location = new Point(6, 75);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(752, 208);
+            listView1.TabIndex = 0;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.List;
             // 
             // veiculo
             // 
-            this.veiculo.Text = "Veículo";
+            veiculo.Text = "Veículo";
             // 
             // marca
             // 
-            this.marca.Text = "Marca";
+            marca.Text = "Marca";
             // 
             // ano
             // 
-            this.ano.DisplayIndex = 4;
-            this.ano.Text = "Ano";
+            ano.DisplayIndex = 4;
+            ano.Text = "Ano";
             // 
             // tipo_c
             // 
-            this.tipo_c.DisplayIndex = 2;
-            this.tipo_c.Tag = "";
-            this.tipo_c.Text = "Tipo de Combustível";
+            tipo_c.DisplayIndex = 2;
+            tipo_c.Tag = "";
+            tipo_c.Text = "Tipo de Combustível";
             // 
             // cor
             // 
-            this.cor.DisplayIndex = 3;
-            this.cor.Text = "Cor";
+            cor.DisplayIndex = 3;
+            cor.Text = "Cor";
             // 
             // preco
             // 
-            this.preco.Text = "Preço";
+            preco.Text = "Preço";
             // 
             // compras
             // 
-            this.compras.BackColor = System.Drawing.Color.AliceBlue;
-            this.compras.Controls.Add(this.button8);
-            this.compras.Controls.Add(this.button9);
-            this.compras.Controls.Add(this.textBox8);
-            this.compras.Controls.Add(this.button10);
-            this.compras.Controls.Add(this.button11);
-            this.compras.Controls.Add(this.button12);
-            this.compras.Controls.Add(this.listView2);
-            this.compras.Location = new System.Drawing.Point(4, 24);
-            this.compras.Name = "compras";
-            this.compras.Padding = new System.Windows.Forms.Padding(3);
-            this.compras.Size = new System.Drawing.Size(764, 289);
-            this.compras.TabIndex = 2;
-            this.compras.Text = "Compras";
+            compras.BackColor = Color.AliceBlue;
+            compras.Controls.Add(button8);
+            compras.Controls.Add(button9);
+            compras.Controls.Add(textBox8);
+            compras.Controls.Add(button10);
+            compras.Controls.Add(button11);
+            compras.Controls.Add(button12);
+            compras.Controls.Add(listView2);
+            compras.Location = new Point(4, 24);
+            compras.Name = "compras";
+            compras.Padding = new Padding(3);
+            compras.Size = new Size(764, 289);
+            compras.TabIndex = 2;
+            compras.Text = "Compras";
             // 
             // button8
             // 
-            this.button8.BackColor = System.Drawing.Color.MediumPurple;
-            this.button8.ForeColor = System.Drawing.SystemColors.Window;
-            this.button8.Location = new System.Drawing.Point(532, 46);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(110, 23);
-            this.button8.TabIndex = 13;
-            this.button8.Text = "Gravar em XML";
-            this.button8.UseVisualStyleBackColor = false;
+            button8.BackColor = Color.MediumPurple;
+            button8.ForeColor = SystemColors.Window;
+            button8.Location = new Point(532, 46);
+            button8.Name = "button8";
+            button8.Size = new Size(110, 23);
+            button8.TabIndex = 13;
+            button8.Text = "Gravar em XML";
+            button8.UseVisualStyleBackColor = false;
             // 
             // button9
             // 
-            this.button9.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button9.ForeColor = System.Drawing.SystemColors.Window;
-            this.button9.Location = new System.Drawing.Point(273, 6);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 12;
-            this.button9.Text = "Buscar";
-            this.button9.UseVisualStyleBackColor = false;
+            button9.BackColor = Color.CornflowerBlue;
+            button9.ForeColor = SystemColors.Window;
+            button9.Location = new Point(273, 6);
+            button9.Name = "button9";
+            button9.Size = new Size(75, 23);
+            button9.TabIndex = 12;
+            button9.Text = "Buscar";
+            button9.UseVisualStyleBackColor = false;
             // 
             // textBox8
             // 
-            this.textBox8.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBox8.Location = new System.Drawing.Point(6, 6);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(261, 23);
-            this.textBox8.TabIndex = 11;
+            textBox8.BackColor = SystemColors.InactiveBorder;
+            textBox8.Location = new Point(6, 6);
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(261, 23);
+            textBox8.TabIndex = 11;
             // 
             // button10
             // 
-            this.button10.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.button10.ForeColor = System.Drawing.SystemColors.Window;
-            this.button10.Location = new System.Drawing.Point(648, 46);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(110, 23);
-            this.button10.TabIndex = 10;
-            this.button10.Text = "Abrir o XML";
-            this.button10.UseVisualStyleBackColor = false;
+            button10.BackColor = Color.MediumSlateBlue;
+            button10.ForeColor = SystemColors.Window;
+            button10.Location = new Point(648, 46);
+            button10.Name = "button10";
+            button10.Size = new Size(110, 23);
+            button10.TabIndex = 10;
+            button10.Text = "Abrir o XML";
+            button10.UseVisualStyleBackColor = false;
             // 
             // button11
             // 
-            this.button11.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button11.ForeColor = System.Drawing.SystemColors.Window;
-            this.button11.Location = new System.Drawing.Point(122, 46);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(110, 23);
-            this.button11.TabIndex = 9;
-            this.button11.Text = "Editar";
-            this.button11.UseVisualStyleBackColor = false;
+            button11.BackColor = Color.CornflowerBlue;
+            button11.ForeColor = SystemColors.Window;
+            button11.Location = new Point(122, 46);
+            button11.Name = "button11";
+            button11.Size = new Size(110, 23);
+            button11.TabIndex = 9;
+            button11.Text = "Editar";
+            button11.UseVisualStyleBackColor = false;
             // 
             // button12
             // 
-            this.button12.BackColor = System.Drawing.Color.Red;
-            this.button12.ForeColor = System.Drawing.SystemColors.Window;
-            this.button12.Location = new System.Drawing.Point(6, 46);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(110, 23);
-            this.button12.TabIndex = 8;
-            this.button12.Text = "Excluir";
-            this.button12.UseVisualStyleBackColor = false;
+            button12.BackColor = Color.Red;
+            button12.ForeColor = SystemColors.Window;
+            button12.Location = new Point(6, 46);
+            button12.Name = "button12";
+            button12.Size = new Size(110, 23);
+            button12.TabIndex = 8;
+            button12.Text = "Excluir";
+            button12.UseVisualStyleBackColor = false;
             // 
             // listView2
             // 
-            this.listView2.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6});
-            this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
-            this.listView2.Location = new System.Drawing.Point(6, 75);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(752, 208);
-            this.listView2.TabIndex = 7;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.List;
+            listView2.BackColor = SystemColors.InactiveBorder;
+            listView2.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6 });
+            listView2.Items.AddRange(new ListViewItem[] { listViewItem2 });
+            listView2.Location = new Point(6, 75);
+            listView2.Name = "listView2";
+            listView2.Size = new Size(752, 208);
+            listView2.TabIndex = 7;
+            listView2.UseCompatibleStateImageBehavior = false;
+            listView2.View = View.List;
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Veículo";
+            columnHeader1.Text = "Veículo";
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Marca";
+            columnHeader2.Text = "Marca";
             // 
             // columnHeader3
             // 
-            this.columnHeader3.DisplayIndex = 4;
-            this.columnHeader3.Text = "Ano";
+            columnHeader3.DisplayIndex = 4;
+            columnHeader3.Text = "Ano";
             // 
             // columnHeader4
             // 
-            this.columnHeader4.DisplayIndex = 2;
-            this.columnHeader4.Tag = "";
-            this.columnHeader4.Text = "Tipo de Combustível";
+            columnHeader4.DisplayIndex = 2;
+            columnHeader4.Tag = "";
+            columnHeader4.Text = "Tipo de Combustível";
             // 
             // columnHeader5
             // 
-            this.columnHeader5.DisplayIndex = 3;
-            this.columnHeader5.Text = "Cor";
+            columnHeader5.DisplayIndex = 3;
+            columnHeader5.Text = "Cor";
             // 
             // columnHeader6
             // 
-            this.columnHeader6.Text = "Preço";
+            columnHeader6.Text = "Preço";
+            // 
+            // inputPreco
+            // 
+            inputPreco.Location = new Point(387, 164);
+            inputPreco.Name = "inputPreco";
+            inputPreco.Size = new Size(360, 23);
+            inputPreco.TabIndex = 17;
+            inputPreco.KeyPress += inputPreco_KeyPress_1;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(797, 389);
-            this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.tabControl1.ResumeLayout(false);
-            this.cadastro.ResumeLayout(false);
-            this.cadastro.PerformLayout();
-            this.vendas.ResumeLayout(false);
-            this.vendas.PerformLayout();
-            this.compras.ResumeLayout(false);
-            this.compras.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightSkyBlue;
+            ClientSize = new Size(797, 389);
+            Controls.Add(tabControl1);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(textBox1);
+            Name = "Form1";
+            Text = "Form1";
+            Load += Form1_Load;
+            tabControl1.ResumeLayout(false);
+            cadastro.ResumeLayout(false);
+            cadastro.PerformLayout();
+            vendas.ResumeLayout(false);
+            vendas.PerformLayout();
+            compras.ResumeLayout(false);
+            compras.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -579,14 +548,14 @@
         private TextBox textBox1;
         private Label label1;
         private Label label2;
-        private TextBox textBox2;
-        private ComboBox comboBox1;
-        private TextBox textBox3;
+        private TextBox inputMarca;
+        private ComboBox inputVeiculo;
+        private TextBox inputAno;
         private Label label3;
         private Label label4;
         private Label label5;
-        private TextBox textBox4;
-        private TextBox textBox5;
+        private TextBox inputTipoCombustivel;
+        private TextBox inputCor;
         private Label label6;
         private Label label7;
         private TabControl tabControl1;
@@ -594,7 +563,6 @@
         private TabPage vendas;
         private TabPage compras;
         private Label label8;
-        private TextBox textBox6;
         private ListView listView1;
         private ColumnHeader veiculo;
         private ColumnHeader marca;
@@ -623,5 +591,6 @@
         private ColumnHeader columnHeader4;
         private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader6;
+        private TextBox inputPreco;
     }
 }

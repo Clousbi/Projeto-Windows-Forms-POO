@@ -1,3 +1,7 @@
+using System.Security.Cryptography.X509Certificates;
+using System.Xml;
+using System.Xml.Linq;
+
 namespace teste
 {
     internal static class Program
@@ -13,5 +17,38 @@ namespace teste
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
         }
+
+        public static void adicionaVeiculo(veiculo v)
+        {
+
+        }
     }
+
+    public class veiculo
+    {
+        string marca { 
+            get { return marca; } 
+            set { marca = value; } 
+        }
+        int ano {
+            get { return ano; }
+            set { ano = value; }
+        }
+        string tipoCombustivel
+        {
+            get { return tipoCombustivel; }
+            set { tipoCombustivel = value; }
+        }
+        string cor 
+        {
+            get { return cor; }
+            set { cor = value; }
+        }
+        double preco 
+        {
+            get { return preco; }
+            set { preco = value; }
+        }
+    }
+    
 }
