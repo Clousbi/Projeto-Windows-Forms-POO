@@ -33,7 +33,7 @@ namespace teste
         private void button1_Click(object sender, EventArgs e)
         {
             veiculo v = new veiculo();
-            
+
             string _tipoVeiculo = inputVeiculo.Text;
             string _marca = inputMarca.Text;
             string _ano = inputAno.Text;
@@ -103,6 +103,11 @@ namespace teste
                 t.Select(t.Text.Length, 0);
             }
             e.Handled = true;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
