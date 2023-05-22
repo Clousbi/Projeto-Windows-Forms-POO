@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem7 = new ListViewItem(new string[] { "", "1", "1", "1", "1", "1", "1" }, -1);
-            ListViewItem listViewItem8 = new ListViewItem(new string[] { "", "1", "1", "1", "1", "1", "1" }, -1);
+            components = new System.ComponentModel.Container();
+            ListViewItem listViewItem1 = new ListViewItem(new string[] { "", "1", "1", "1", "1", "1", "1" }, -1);
+            ListViewItem listViewItem2 = new ListViewItem(new string[] { "", "1", "1", "1", "1", "1", "1" }, -1);
             textBox1 = new TextBox();
             label1 = new Label();
             label2 = new Label();
@@ -45,6 +46,9 @@
             label7 = new Label();
             tabControl1 = new TabControl();
             cadastro = new TabPage();
+            label9 = new Label();
+            inputCompra = new RadioButton();
+            inputVenda = new RadioButton();
             inputPreco = new TextBox();
             button2 = new Button();
             button1 = new Button();
@@ -77,13 +81,14 @@
             columnHeader4 = new ColumnHeader();
             columnHeader5 = new ColumnHeader();
             columnHeader6 = new ColumnHeader();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
-            label9 = new Label();
+            veiculoBindingSource = new BindingSource(components);
+            gridVendas = new DataGridView();
             tabControl1.SuspendLayout();
             cadastro.SuspendLayout();
             vendas.SuspendLayout();
             compras.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)veiculoBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridVendas).BeginInit();
             SuspendLayout();
             // 
             // textBox1
@@ -101,7 +106,7 @@
             label1.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(14, 13);
             label1.Name = "label1";
-            label1.Size = new Size(454, 60);
+            label1.Size = new Size(593, 60);
             label1.TabIndex = 1;
             label1.Text = "Venda e Compra de Veículos";
             // 
@@ -228,8 +233,8 @@
             // 
             cadastro.BackColor = Color.AliceBlue;
             cadastro.Controls.Add(label9);
-            cadastro.Controls.Add(radioButton2);
-            cadastro.Controls.Add(radioButton1);
+            cadastro.Controls.Add(inputCompra);
+            cadastro.Controls.Add(inputVenda);
             cadastro.Controls.Add(inputPreco);
             cadastro.Controls.Add(button2);
             cadastro.Controls.Add(button1);
@@ -251,6 +256,38 @@
             cadastro.Size = new Size(874, 390);
             cadastro.TabIndex = 0;
             cadastro.Text = "Cadastro";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(8, 294);
+            label9.Name = "label9";
+            label9.Size = new Size(39, 20);
+            label9.TabIndex = 20;
+            label9.Text = "Tipo";
+            // 
+            // inputCompra
+            // 
+            inputCompra.AutoSize = true;
+            inputCompra.Location = new Point(165, 317);
+            inputCompra.Name = "inputCompra";
+            inputCompra.Size = new Size(83, 24);
+            inputCompra.TabIndex = 19;
+            inputCompra.TabStop = true;
+            inputCompra.Text = "Compra";
+            inputCompra.UseVisualStyleBackColor = true;
+            inputCompra.CheckedChanged += radioButton2_CheckedChanged;
+            // 
+            // inputVenda
+            // 
+            inputVenda.AutoSize = true;
+            inputVenda.Location = new Point(18, 317);
+            inputVenda.Name = "inputVenda";
+            inputVenda.Size = new Size(71, 24);
+            inputVenda.TabIndex = 18;
+            inputVenda.TabStop = true;
+            inputVenda.Text = "Venda";
+            inputVenda.UseVisualStyleBackColor = true;
             // 
             // inputPreco
             // 
@@ -298,6 +335,7 @@
             // vendas
             // 
             vendas.BackColor = Color.AliceBlue;
+            vendas.Controls.Add(gridVendas);
             vendas.Controls.Add(button7);
             vendas.Controls.Add(button6);
             vendas.Controls.Add(textBox7);
@@ -312,6 +350,7 @@
             vendas.Size = new Size(874, 390);
             vendas.TabIndex = 1;
             vendas.Text = "Vendas";
+            vendas.Enter += vendas_Enter;
             // 
             // button7
             // 
@@ -369,7 +408,7 @@
             button4.TabIndex = 2;
             button4.Text = "Editar";
             button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
+            button4.Click += abrirEdicao;
             // 
             // button3
             // 
@@ -387,7 +426,7 @@
             // 
             listView1.BackColor = SystemColors.InactiveBorder;
             listView1.Columns.AddRange(new ColumnHeader[] { veiculo, marca, ano, tipo_c, cor, preco });
-            listView1.Items.AddRange(new ListViewItem[] { listViewItem7 });
+            listView1.Items.AddRange(new ListViewItem[] { listViewItem1 });
             listView1.Location = new Point(7, 100);
             listView1.Margin = new Padding(3, 4, 3, 4);
             listView1.Name = "listView1";
@@ -515,7 +554,7 @@
             // 
             listView2.BackColor = SystemColors.InactiveBorder;
             listView2.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6 });
-            listView2.Items.AddRange(new ListViewItem[] { listViewItem8 });
+            listView2.Items.AddRange(new ListViewItem[] { listViewItem2 });
             listView2.Location = new Point(7, 100);
             listView2.Margin = new Padding(3, 4, 3, 4);
             listView2.Name = "listView2";
@@ -552,37 +591,19 @@
             // 
             columnHeader6.Text = "Preço";
             // 
-            // radioButton1
+            // veiculoBindingSource
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(18, 317);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(71, 24);
-            radioButton1.TabIndex = 18;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Venda";
-            radioButton1.UseVisualStyleBackColor = true;
+            veiculoBindingSource.DataSource = typeof(veiculo);
             // 
-            // radioButton2
+            // gridVendas
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(165, 317);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(83, 24);
-            radioButton2.TabIndex = 19;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Compra";
-            radioButton2.UseVisualStyleBackColor = true;
-            radioButton2.CheckedChanged += radioButton2_CheckedChanged;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(8, 294);
-            label9.Name = "label9";
-            label9.Size = new Size(39, 20);
-            label9.TabIndex = 20;
-            label9.Text = "Tipo";
+            gridVendas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gridVendas.Location = new Point(7, 100);
+            gridVendas.Name = "gridVendas";
+            gridVendas.RowHeadersWidth = 51;
+            gridVendas.RowTemplate.Height = 29;
+            gridVendas.Size = new Size(859, 276);
+            gridVendas.TabIndex = 7;
             // 
             // Form1
             // 
@@ -605,6 +626,8 @@
             vendas.PerformLayout();
             compras.ResumeLayout(false);
             compras.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)veiculoBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridVendas).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -659,7 +682,9 @@
         private ColumnHeader columnHeader6;
         private TextBox inputPreco;
         private Label label9;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
+        private RadioButton inputCompra;
+        private RadioButton inputVenda;
+        private BindingSource veiculoBindingSource;
+        private DataGridView gridVendas;
     }
 }
