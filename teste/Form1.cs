@@ -1,6 +1,8 @@
 using System.Data;
 using System.Text.RegularExpressions;
 using System.Xml;
+using System.IO;
+using System.Windows.Forms;
 
 namespace teste
 {
@@ -32,6 +34,7 @@ namespace teste
             dataTable.Columns.Add("Cor");
             dataTable.Columns.Add("Tipo Combustivel");
             dataTable.Columns.Add("Preço");
+            dataTable.Columns.Add("Guid");
             foreach (XmlNode veiculoNode in veiculoNodes)
             {
                 string marca = veiculoNode.SelectSingleNode("marca").InnerText.ToString();
@@ -40,13 +43,13 @@ namespace teste
                 string preco = veiculoNode.SelectSingleNode("preco").InnerText.ToString();
                 string tipoCombustivel = veiculoNode.SelectSingleNode("tipoCombustivel").InnerText.ToString();
                 string cor = veiculoNode.SelectSingleNode("cor").InnerText.ToString();
-                Console.Write(marca);
+                string guid = veiculoNode.SelectSingleNode("guid").InnerText.ToString();
                 //veiculo v = new veiculo();
 
 
 
                 // Adicionar linhas ao DataTable
-                dataTable.Rows.Add(marca, tipoVeiculo, ano, cor, tipoCombustivel, preco);
+                dataTable.Rows.Add(marca, tipoVeiculo, ano, cor, tipoCombustivel, preco, guid);
 
                 //v.ano = ano;
                 //v.preco = preco;
@@ -58,7 +61,55 @@ namespace teste
 
                 //listaVeiculos.Add(v);
             }
-            gridVendas.DataSource = dataTable;  
+            gridVendas.DataSource = dataTable;
+
+            xmlDoc.Load(@"C:\tmp\veiculoCompra.xml");
+
+            // Obter a lista de elementos desejados
+            xml = xmlDoc.SelectSingleNode("rootElement");
+
+            lista = xml.SelectNodes("veiculo");
+
+            veiculoNodes = xmlDoc.SelectNodes("//veiculo");
+
+            // Criar uma lista de veículos
+            listaVeiculos = new List<veiculo>();
+            dataTable = new DataTable();
+            dataTable.Columns.Add("Marca");
+            dataTable.Columns.Add("Veiculo");
+            dataTable.Columns.Add("Ano");
+            dataTable.Columns.Add("Cor");
+            dataTable.Columns.Add("Tipo_Combustivel");
+            dataTable.Columns.Add("Preco");
+            dataTable.Columns.Add("Guid");
+            foreach (XmlNode veiculoNode in veiculoNodes)
+            {
+                string marca = veiculoNode.SelectSingleNode("marca").InnerText.ToString();
+                string tipoVeiculo = veiculoNode.SelectSingleNode("tipoVeiculo").InnerText.ToString();
+                string ano = veiculoNode.SelectSingleNode("ano").InnerText.ToString();
+                string preco = veiculoNode.SelectSingleNode("preco").InnerText.ToString();
+                string tipoCombustivel = veiculoNode.SelectSingleNode("tipoCombustivel").InnerText.ToString();
+                string cor = veiculoNode.SelectSingleNode("cor").InnerText.ToString();
+                string guid = veiculoNode.SelectSingleNode("guid").InnerText.ToString();
+                Console.Write(marca);
+                //veiculo v = new veiculo();
+
+
+
+                // Adicionar linhas ao DataTable
+                dataTable.Rows.Add(marca, tipoVeiculo, ano, cor, tipoCombustivel, preco, guid);
+
+                //v.ano = ano;
+                //v.preco = preco;
+                //v.tipoVeiculo = tipoVeiculo;
+                //v.cor = cor;
+                //v.preco = preco;
+                //v.tipoCombustivel = tipoCombustivel;
+                //Console.Write(marca);
+
+                //listaVeiculos.Add(v);
+            }
+            gridCompra.DataSource = dataTable;
 
         }
 
@@ -191,7 +242,7 @@ namespace teste
 
             foreach (XmlNode veiculoNode in veiculoNodes)
             {
-
+                string l = gridCompra.SelectedRows.ToString();
                 //veiculo v = new veiculo();
                 //v.tipoVeiculo = veiculoNode.SelectSingleNode("tipoVeiculo").InnerText;
                 //v.marca = veiculoNode.SelectSingleNode("marca").InnerText;
@@ -200,6 +251,7 @@ namespace teste
                 //v.cor = veiculoNode.SelectSingleNode("cor").InnerText;
                 //v.preco = veiculoNode.SelectSingleNode("preco").InnerText;
                 Console.Write(marca);
+
                 //listaVeiculos.Add(v);
             }
             Console.WriteLine(listaVeiculos);
@@ -227,7 +279,6 @@ namespace teste
                 string preco = veiculoNode.SelectSingleNode("preco").InnerText.ToString();
                 string tipoCombustivel = veiculoNode.SelectSingleNode("tipoCombustivel").InnerText.ToString();
                 string cor = veiculoNode.SelectSingleNode("cor").InnerText.ToString();
-                Console.Write(marca);
             }
 
         }
@@ -235,6 +286,43 @@ namespace teste
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void gridCompra_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            DataTable dataTable = ((DataTable)gridCompra.DataSource).Copy();
+
+            // Carregar o documento XML
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(@"C:\tmp\veiculoCompra.xml");
+
+            // Localizar o elemento que contém os dados no arquivo XML
+            XmlNode dataNode = xmlDoc.SelectSingleNode("rootElement");
+
+            // Limpar os dados existentes no arquivo XML
+            dataNode.RemoveAll();
+
+            // Adicionar os novos dados do DataGridView no arquivo XML
+            foreach (DataRow row in dataTable.Rows)
+            {
+                XmlNode rowNode = xmlDoc.CreateElement("veiculo");
+
+                foreach (DataColumn column in dataTable.Columns)
+                {
+                    string columnName = column.ColumnName;
+                    string columnValue = row[column].ToString();
+
+                    XmlNode cellNode = xmlDoc.CreateElement(columnName);
+                    cellNode.InnerText = columnValue;
+
+                    rowNode.AppendChild(cellNode);
+                }
+
+                dataNode.AppendChild(rowNode);
+            }
+
+            // Salvar as alterações de volta no arquivo XML
+            xmlDoc.Save(@"C:\tmp\veiculoCompra.xml");
         }
     }
 

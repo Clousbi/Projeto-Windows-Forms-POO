@@ -30,7 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             ListViewItem listViewItem1 = new ListViewItem(new string[] { "", "1", "1", "1", "1", "1", "1" }, -1);
-            ListViewItem listViewItem2 = new ListViewItem(new string[] { "", "1", "1", "1", "1", "1", "1" }, -1);
             textBox1 = new TextBox();
             label1 = new Label();
             label2 = new Label();
@@ -54,6 +53,7 @@
             button1 = new Button();
             label8 = new Label();
             vendas = new TabPage();
+            gridVendas = new DataGridView();
             button7 = new Button();
             button6 = new Button();
             textBox7 = new TextBox();
@@ -68,27 +68,21 @@
             cor = new ColumnHeader();
             preco = new ColumnHeader();
             compras = new TabPage();
+            gridCompra = new DataGridView();
             button8 = new Button();
             button9 = new Button();
             textBox8 = new TextBox();
             button10 = new Button();
             button11 = new Button();
             button12 = new Button();
-            listView2 = new ListView();
-            columnHeader1 = new ColumnHeader();
-            columnHeader2 = new ColumnHeader();
-            columnHeader3 = new ColumnHeader();
-            columnHeader4 = new ColumnHeader();
-            columnHeader5 = new ColumnHeader();
-            columnHeader6 = new ColumnHeader();
             veiculoBindingSource = new BindingSource(components);
-            gridVendas = new DataGridView();
             tabControl1.SuspendLayout();
             cadastro.SuspendLayout();
             vendas.SuspendLayout();
-            compras.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)veiculoBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridVendas).BeginInit();
+            compras.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gridCompra).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)veiculoBindingSource).BeginInit();
             SuspendLayout();
             // 
             // textBox1
@@ -352,6 +346,16 @@
             vendas.Text = "Vendas";
             vendas.Enter += vendas_Enter;
             // 
+            // gridVendas
+            // 
+            gridVendas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gridVendas.Location = new Point(7, 100);
+            gridVendas.Name = "gridVendas";
+            gridVendas.RowHeadersWidth = 51;
+            gridVendas.RowTemplate.Height = 29;
+            gridVendas.Size = new Size(859, 276);
+            gridVendas.TabIndex = 7;
+            // 
             // button7
             // 
             button7.BackColor = Color.MediumPurple;
@@ -466,13 +470,13 @@
             // compras
             // 
             compras.BackColor = Color.AliceBlue;
+            compras.Controls.Add(gridCompra);
             compras.Controls.Add(button8);
             compras.Controls.Add(button9);
             compras.Controls.Add(textBox8);
             compras.Controls.Add(button10);
             compras.Controls.Add(button11);
             compras.Controls.Add(button12);
-            compras.Controls.Add(listView2);
             compras.Location = new Point(4, 29);
             compras.Margin = new Padding(3, 4, 3, 4);
             compras.Name = "compras";
@@ -480,6 +484,17 @@
             compras.Size = new Size(874, 390);
             compras.TabIndex = 2;
             compras.Text = "Compras";
+            // 
+            // gridCompra
+            // 
+            gridCompra.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gridCompra.Location = new Point(8, 99);
+            gridCompra.Name = "gridCompra";
+            gridCompra.RowHeadersWidth = 51;
+            gridCompra.RowTemplate.Height = 29;
+            gridCompra.Size = new Size(859, 276);
+            gridCompra.TabIndex = 14;
+            gridCompra.CellEndEdit += gridCompra_CellEndEdit;
             // 
             // button8
             // 
@@ -550,60 +565,9 @@
             button12.Text = "Excluir";
             button12.UseVisualStyleBackColor = false;
             // 
-            // listView2
-            // 
-            listView2.BackColor = SystemColors.InactiveBorder;
-            listView2.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6 });
-            listView2.Items.AddRange(new ListViewItem[] { listViewItem2 });
-            listView2.Location = new Point(7, 100);
-            listView2.Margin = new Padding(3, 4, 3, 4);
-            listView2.Name = "listView2";
-            listView2.Size = new Size(859, 276);
-            listView2.TabIndex = 7;
-            listView2.UseCompatibleStateImageBehavior = false;
-            listView2.View = View.List;
-            // 
-            // columnHeader1
-            // 
-            columnHeader1.Text = "Veículo";
-            // 
-            // columnHeader2
-            // 
-            columnHeader2.Text = "Marca";
-            // 
-            // columnHeader3
-            // 
-            columnHeader3.DisplayIndex = 4;
-            columnHeader3.Text = "Ano";
-            // 
-            // columnHeader4
-            // 
-            columnHeader4.DisplayIndex = 2;
-            columnHeader4.Tag = "";
-            columnHeader4.Text = "Tipo de Combustível";
-            // 
-            // columnHeader5
-            // 
-            columnHeader5.DisplayIndex = 3;
-            columnHeader5.Text = "Cor";
-            // 
-            // columnHeader6
-            // 
-            columnHeader6.Text = "Preço";
-            // 
             // veiculoBindingSource
             // 
             veiculoBindingSource.DataSource = typeof(veiculo);
-            // 
-            // gridVendas
-            // 
-            gridVendas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridVendas.Location = new Point(7, 100);
-            gridVendas.Name = "gridVendas";
-            gridVendas.RowHeadersWidth = 51;
-            gridVendas.RowTemplate.Height = 29;
-            gridVendas.Size = new Size(859, 276);
-            gridVendas.TabIndex = 7;
             // 
             // Form1
             // 
@@ -624,10 +588,11 @@
             cadastro.PerformLayout();
             vendas.ResumeLayout(false);
             vendas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)gridVendas).EndInit();
             compras.ResumeLayout(false);
             compras.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)gridCompra).EndInit();
             ((System.ComponentModel.ISupportInitialize)veiculoBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)gridVendas).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -673,18 +638,12 @@
         private Button button10;
         private Button button11;
         private Button button12;
-        private ListView listView2;
-        private ColumnHeader columnHeader1;
-        private ColumnHeader columnHeader2;
-        private ColumnHeader columnHeader3;
-        private ColumnHeader columnHeader4;
-        private ColumnHeader columnHeader5;
-        private ColumnHeader columnHeader6;
         private TextBox inputPreco;
         private Label label9;
         private RadioButton inputCompra;
         private RadioButton inputVenda;
         private BindingSource veiculoBindingSource;
         private DataGridView gridVendas;
+        private DataGridView gridCompra;
     }
 }
