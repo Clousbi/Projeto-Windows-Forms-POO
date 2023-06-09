@@ -368,6 +368,7 @@
             button7.TabIndex = 6;
             button7.Text = "Gravar em XML";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
             // button6
             // 
@@ -401,6 +402,7 @@
             button5.TabIndex = 3;
             button5.Text = "Abrir o XML";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // button4
             // 
@@ -426,6 +428,7 @@
             button3.TabIndex = 1;
             button3.Text = "Excluir";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // listView1
             // 
@@ -508,6 +511,7 @@
             button8.TabIndex = 13;
             button8.Text = "Gravar em XML";
             button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
             // 
             // button9
             // 
@@ -541,6 +545,7 @@
             button10.TabIndex = 10;
             button10.Text = "Abrir o XML";
             button10.UseVisualStyleBackColor = false;
+            button10.Click += button10_Click;
             // 
             // button11
             // 
@@ -565,6 +570,7 @@
             button12.TabIndex = 8;
             button12.Text = "Excluir";
             button12.UseVisualStyleBackColor = false;
+            button12.Click += button12_Click;
             // 
             // veiculoBindingSource
             // 

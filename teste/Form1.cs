@@ -4,6 +4,7 @@ using System.Xml;
 using System.IO;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using System.Diagnostics;
 
 namespace teste
 {
@@ -352,6 +353,179 @@ namespace teste
 
                 // Salvar as alterações de volta para o arquivo XML
                 doc.Save(filePath);
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            string sourceFilePath = @"C:\tmp\veiculoCompra.xml";
+
+            // Exibir o diálogo de salvamento
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Arquivos XML (*.xml)|*.xml";
+            saveFileDialog.Title = "Salvar arquivo XML";
+            saveFileDialog.FileName = "veiculoCompraCopia.xml"; // Nome padrão para a cópia do arquivo
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string destinationFilePath = saveFileDialog.FileName;
+
+                // Copiar o arquivo XML para o novo destino
+                File.Copy(sourceFilePath, destinationFilePath);
+
+                Console.WriteLine("Arquivo XML copiado com sucesso para: " + destinationFilePath);
+            }
+            else
+            {
+                Console.WriteLine("Operação de salvamento cancelada pelo usuário.");
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string sourceFilePath = @"C:\tmp\veiculoVenda.xml";
+
+            // Exibir o diálogo de salvamento
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Arquivos XML (*.xml)|*.xml";
+            saveFileDialog.Title = "Salvar arquivo XML";
+            saveFileDialog.FileName = "veiculoVendaCopia.xml"; // Nome padrão para a cópia do arquivo
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string destinationFilePath = saveFileDialog.FileName;
+
+                // Copiar o arquivo XML para o novo destino
+                File.Copy(sourceFilePath, destinationFilePath);
+
+                Console.WriteLine("Arquivo XML copiado com sucesso para: " + destinationFilePath);
+            }
+            else
+            {
+                Console.WriteLine("Operação de salvamento cancelada pelo usuário.");
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            string sourceFilePath = @"C:\tmp\veiculoCompra.xml";
+            string destinationFolderPath = @"C:\tmp\";
+
+            // Gerar um novo GUID curto
+            string guid = Guid.NewGuid().ToString().Substring(0, 8);
+
+            // Construir o nome do arquivo de destino com o GUID
+            string destinationFileName = $"veiculoCompra_{guid}.xml";
+            string destinationFilePath = Path.Combine(destinationFolderPath, destinationFileName);
+
+            // Copiar o arquivo XML para o novo destino
+            File.Copy(sourceFilePath, destinationFilePath);
+
+            Console.WriteLine("Arquivo XML copiado com sucesso para: " + destinationFilePath);
+
+            // Abrir o arquivo XML após ser salvo
+            OpenXmlFile(destinationFilePath);
+        }
+
+        static async void OpenXmlFile(string filePath)
+        {
+            if (File.Exists(filePath))
+            {
+                // Abrir o arquivo XML com o aplicativo padrão associado
+                await Task.Delay(TimeSpan.FromMilliseconds(1_000));
+                Process.Start(filePath);
+            }
+            else
+            {
+                Console.WriteLine("Arquivo XML não encontrado: " + filePath);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string sourceFilePath = @"C:\tmp\veiculoVenda.xml";
+
+            string destinationFolderPath = @"C:\tmp\";
+
+            // Gerar um novo GUID curto
+            string guid = Guid.NewGuid().ToString().Substring(0, 8);
+
+            // Construir o nome do arquivo de destino com o GUID
+            string destinationFileName = $"veiculoVenda_{guid}.xml";
+            string destinationFilePath = Path.Combine(destinationFolderPath, destinationFileName);
+
+            // Copiar o arquivo XML para o novo destino
+            File.Copy(sourceFilePath, destinationFilePath);
+
+            Console.WriteLine("Arquivo XML copiado com sucesso para: " + destinationFilePath);
+
+            // Abrir o arquivo XML após ser salvo
+            OpenXmlFile(destinationFilePath);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (gridVendas.SelectedRows.Count > 0)
+            {
+                // Obter o valor do GUID da célula selecionada
+                string guidToRemove = gridVendas.SelectedRows[0].Cells["Guid"].Value.ToString();
+
+                // Chamar o método para excluir o veículo com base no GUID
+                string filePath = @"C:\tmp\veiculoVenda.xml";
+
+                XDocument doc = XDocument.Load(filePath);
+
+                // Localizar o veículo pelo GUID
+                XElement veiculoToRemove = doc.Descendants("veiculo")
+                                              .FirstOrDefault(e => e.Element("guid").Value == guidToRemove);
+
+                if (veiculoToRemove != null)
+                {
+                    // Remover o elemento "veiculo" do documento XML
+                    veiculoToRemove.Remove();
+
+                    // Salvar as alterações de volta para o arquivo XML
+                    doc.Save(filePath);
+                    gridVendas.Rows.RemoveAt(gridCompra.SelectedRows[0].Index);
+                    Console.WriteLine("Veículo removido com sucesso!");
+                }
+                else
+                {
+                    Console.WriteLine("Veículo não encontrado!");
+                }
+            }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            if (gridCompra.SelectedRows.Count > 0)
+            {
+                // Obter o valor do GUID da célula selecionada
+                string guidToRemove = gridCompra.SelectedRows[0].Cells["Guid"].Value.ToString();
+
+                // Chamar o método para excluir o veículo com base no GUID
+                string filePath = @"C:\tmp\veiculoCompra.xml";
+
+                XDocument doc = XDocument.Load(filePath);
+
+                // Localizar o veículo pelo GUID
+                XElement veiculoToRemove = doc.Descendants("veiculo")
+                                              .FirstOrDefault(e => e.Element("guid").Value == guidToRemove);
+
+                if (veiculoToRemove != null)
+                {
+                    // Remover o elemento "veiculo" do documento XML
+                    veiculoToRemove.Remove();
+
+                    // Salvar as alterações de volta para o arquivo XML
+                    doc.Save(filePath);
+                    gridCompra.Rows.RemoveAt(gridCompra.SelectedRows[0].Index);
+                    Console.WriteLine("Veículo removido com sucesso!");
+                }
+                else
+                {
+                    Console.WriteLine("Veículo não encontrado!");
+                }
             }
         }
     }
