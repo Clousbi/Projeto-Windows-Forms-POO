@@ -3,6 +3,7 @@ using System.Text.RegularExpressions;
 using System.Xml;
 using System.IO;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace teste
 {
@@ -79,8 +80,8 @@ namespace teste
             dataTable.Columns.Add("Veiculo");
             dataTable.Columns.Add("Ano");
             dataTable.Columns.Add("Cor");
-            dataTable.Columns.Add("Tipo_Combustivel");
-            dataTable.Columns.Add("Preco");
+            dataTable.Columns.Add("Tipo Combustivel");
+            dataTable.Columns.Add("Preço");
             dataTable.Columns.Add("Guid");
             foreach (XmlNode veiculoNode in veiculoNodes)
             {
@@ -290,39 +291,68 @@ namespace teste
 
         private void gridCompra_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            DataTable dataTable = ((DataTable)gridCompra.DataSource).Copy();
+            DataGridViewRow row = gridCompra.Rows[e.RowIndex];
 
-            // Carregar o documento XML
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load(@"C:\tmp\veiculoCompra.xml");
+            string filePath = @"C:\tmp\veiculoCompra.xml";
 
-            // Localizar o elemento que contém os dados no arquivo XML
-            XmlNode dataNode = xmlDoc.SelectSingleNode("rootElement");
+            XDocument doc = XDocument.Load(filePath);
 
-            // Limpar os dados existentes no arquivo XML
-            dataNode.RemoveAll();
+            string guid = row.Cells["Guid"].Value.ToString();
+            string marca = row.Cells["Marca"].Value.ToString();
+            string tipoVeiculo = row.Cells["Veiculo"].Value.ToString();
+            string ano = row.Cells["Ano"].Value.ToString();
+            string cor = row.Cells["Cor"].Value.ToString();
+            string tipoCombustivel = row.Cells["Tipo Combustivel"].Value.ToString();
+            string preco = row.Cells["Preço"].Value.ToString();
+            XElement veiculo = doc.Descendants("veiculo")
+                              .FirstOrDefault(e => e.Element("guid").Value == guid);
 
-            // Adicionar os novos dados do DataGridView no arquivo XML
-            foreach (DataRow row in dataTable.Rows)
+            if (veiculo != null)
             {
-                XmlNode rowNode = xmlDoc.CreateElement("veiculo");
+                // Atualizar os valores dos elementos
+                veiculo.Element("marca").Value = marca;
+                veiculo.Element("tipoVeiculo").Value = tipoVeiculo;
+                veiculo.Element("ano").Value = ano;
+                veiculo.Element("cor").Value = cor;
+                veiculo.Element("tipoCombustivel").Value = tipoCombustivel;
+                veiculo.Element("preco").Value = preco;
 
-                foreach (DataColumn column in dataTable.Columns)
-                {
-                    string columnName = column.ColumnName;
-                    string columnValue = row[column].ToString();
-
-                    XmlNode cellNode = xmlDoc.CreateElement(columnName);
-                    cellNode.InnerText = columnValue;
-
-                    rowNode.AppendChild(cellNode);
-                }
-
-                dataNode.AppendChild(rowNode);
+                // Salvar as alterações de volta para o arquivo XML
+                doc.Save(filePath);
             }
+        }
 
-            // Salvar as alterações de volta no arquivo XML
-            xmlDoc.Save(@"C:\tmp\veiculoCompra.xml");
+        private void gridVendas_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = gridVendas.Rows[e.RowIndex];
+
+            string filePath = @"C:\tmp\veiculoVenda.xml";
+
+            XDocument doc = XDocument.Load(filePath);
+
+            string guid = row.Cells["Guid"].Value.ToString();
+            string marca = row.Cells["Marca"].Value.ToString();
+            string tipoVeiculo = row.Cells["Veiculo"].Value.ToString();
+            string ano = row.Cells["Ano"].Value.ToString();
+            string cor = row.Cells["Cor"].Value.ToString();
+            string tipoCombustivel = row.Cells["Tipo Combustivel"].Value.ToString();
+            string preco = row.Cells["Preço"].Value.ToString();
+            XElement veiculo = doc.Descendants("veiculo")
+                              .FirstOrDefault(e => e.Element("guid").Value == guid);
+
+            if (veiculo != null)
+            {
+                // Atualizar os valores dos elementos
+                veiculo.Element("marca").Value = marca;
+                veiculo.Element("tipoVeiculo").Value = tipoVeiculo;
+                veiculo.Element("ano").Value = ano;
+                veiculo.Element("cor").Value = cor;
+                veiculo.Element("tipoCombustivel").Value = tipoCombustivel;
+                veiculo.Element("preco").Value = preco;
+
+                // Salvar as alterações de volta para o arquivo XML
+                doc.Save(filePath);
+            }
         }
     }
 

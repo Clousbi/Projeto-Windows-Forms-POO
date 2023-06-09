@@ -355,6 +355,7 @@
             gridVendas.RowTemplate.Height = 29;
             gridVendas.Size = new Size(859, 276);
             gridVendas.TabIndex = 7;
+            gridVendas.CellEndEdit += gridVendas_CellEndEdit;
             // 
             // button7
             // 
