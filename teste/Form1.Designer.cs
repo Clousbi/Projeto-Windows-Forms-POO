@@ -58,7 +58,6 @@
             button6 = new Button();
             textBox7 = new TextBox();
             button5 = new Button();
-            button4 = new Button();
             button3 = new Button();
             listView1 = new ListView();
             veiculo = new ColumnHeader();
@@ -73,7 +72,6 @@
             button9 = new Button();
             textBox8 = new TextBox();
             button10 = new Button();
-            button11 = new Button();
             button12 = new Button();
             veiculoBindingSource = new BindingSource(components);
             tabControl1.SuspendLayout();
@@ -334,7 +332,6 @@
             vendas.Controls.Add(button6);
             vendas.Controls.Add(textBox7);
             vendas.Controls.Add(button5);
-            vendas.Controls.Add(button4);
             vendas.Controls.Add(button3);
             vendas.Controls.Add(listView1);
             vendas.Location = new Point(4, 29);
@@ -404,19 +401,6 @@
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
             // 
-            // button4
-            // 
-            button4.BackColor = Color.CornflowerBlue;
-            button4.ForeColor = SystemColors.Window;
-            button4.Location = new Point(139, 61);
-            button4.Margin = new Padding(3, 4, 3, 4);
-            button4.Name = "button4";
-            button4.Size = new Size(126, 31);
-            button4.TabIndex = 2;
-            button4.Text = "Editar";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += abrirEdicao;
-            // 
             // button3
             // 
             button3.BackColor = Color.Red;
@@ -479,7 +463,6 @@
             compras.Controls.Add(button9);
             compras.Controls.Add(textBox8);
             compras.Controls.Add(button10);
-            compras.Controls.Add(button11);
             compras.Controls.Add(button12);
             compras.Location = new Point(4, 29);
             compras.Margin = new Padding(3, 4, 3, 4);
@@ -546,18 +529,6 @@
             button10.Text = "Abrir o XML";
             button10.UseVisualStyleBackColor = false;
             button10.Click += button10_Click;
-            // 
-            // button11
-            // 
-            button11.BackColor = Color.CornflowerBlue;
-            button11.ForeColor = SystemColors.Window;
-            button11.Location = new Point(139, 61);
-            button11.Margin = new Padding(3, 4, 3, 4);
-            button11.Name = "button11";
-            button11.Size = new Size(126, 31);
-            button11.TabIndex = 9;
-            button11.Text = "Editar";
-            button11.UseVisualStyleBackColor = false;
             // 
             // button12
             // 
@@ -636,14 +607,12 @@
         private Button button6;
         private TextBox textBox7;
         private Button button5;
-        private Button button4;
         private Button button3;
         private Button button7;
         private Button button8;
         private Button button9;
         private TextBox textBox8;
         private Button button10;
-        private Button button11;
         private Button button12;
         private TextBox inputPreco;
         private Label label9;
