@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            ListViewItem listViewItem1 = new ListViewItem(new string[] { "", "1", "1", "1", "1", "1", "1" }, -1);
-            textBox1 = new TextBox();
+            ListViewItem listViewItem3 = new ListViewItem(new string[] { "", "1", "1", "1", "1", "1", "1" }, -1);
             label1 = new Label();
-            label2 = new Label();
             inputMarca = new TextBox();
             inputVeiculo = new ComboBox();
             inputAno = new TextBox();
@@ -57,7 +55,6 @@
             button7 = new Button();
             button6 = new Button();
             textBox7 = new TextBox();
-            button5 = new Button();
             button3 = new Button();
             listView1 = new ListView();
             veiculo = new ColumnHeader();
@@ -71,7 +68,6 @@
             button8 = new Button();
             button9 = new Button();
             textBox8 = new TextBox();
-            button10 = new Button();
             button12 = new Button();
             veiculoBindingSource = new BindingSource(components);
             tabControl1.SuspendLayout();
@@ -83,16 +79,6 @@
             ((System.ComponentModel.ISupportInitialize)veiculoBindingSource).BeginInit();
             SuspendLayout();
             // 
-            // textBox1
-            // 
-            textBox1.Enabled = false;
-            textBox1.Location = new Point(637, 28);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(260, 35);
-            textBox1.TabIndex = 0;
-            // 
             // label1
             // 
             label1.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -101,15 +87,6 @@
             label1.Size = new Size(593, 60);
             label1.TabIndex = 1;
             label1.Text = "Venda e Compra de Veículos";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(637, 4);
-            label2.Name = "label2";
-            label2.Size = new Size(50, 20);
-            label2.TabIndex = 2;
-            label2.Text = "Saldo:";
             // 
             // inputMarca
             // 
@@ -301,6 +278,7 @@
             button2.TabIndex = 16;
             button2.Text = "Limpar";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -331,7 +309,6 @@
             vendas.Controls.Add(button7);
             vendas.Controls.Add(button6);
             vendas.Controls.Add(textBox7);
-            vendas.Controls.Add(button5);
             vendas.Controls.Add(button3);
             vendas.Controls.Add(listView1);
             vendas.Location = new Point(4, 29);
@@ -358,7 +335,7 @@
             // 
             button7.BackColor = Color.MediumPurple;
             button7.ForeColor = SystemColors.Window;
-            button7.Location = new Point(608, 61);
+            button7.Location = new Point(740, 61);
             button7.Margin = new Padding(3, 4, 3, 4);
             button7.Name = "button7";
             button7.Size = new Size(126, 31);
@@ -388,19 +365,6 @@
             textBox7.Size = new Size(298, 27);
             textBox7.TabIndex = 4;
             // 
-            // button5
-            // 
-            button5.BackColor = Color.MediumSlateBlue;
-            button5.ForeColor = SystemColors.Window;
-            button5.Location = new Point(741, 61);
-            button5.Margin = new Padding(3, 4, 3, 4);
-            button5.Name = "button5";
-            button5.Size = new Size(126, 31);
-            button5.TabIndex = 3;
-            button5.Text = "Abrir o XML";
-            button5.UseVisualStyleBackColor = false;
-            button5.Click += button5_Click;
-            // 
             // button3
             // 
             button3.BackColor = Color.Red;
@@ -418,7 +382,7 @@
             // 
             listView1.BackColor = SystemColors.InactiveBorder;
             listView1.Columns.AddRange(new ColumnHeader[] { veiculo, marca, ano, tipo_c, cor, preco });
-            listView1.Items.AddRange(new ListViewItem[] { listViewItem1 });
+            listView1.Items.AddRange(new ListViewItem[] { listViewItem3 });
             listView1.Location = new Point(7, 100);
             listView1.Margin = new Padding(3, 4, 3, 4);
             listView1.Name = "listView1";
@@ -462,7 +426,6 @@
             compras.Controls.Add(button8);
             compras.Controls.Add(button9);
             compras.Controls.Add(textBox8);
-            compras.Controls.Add(button10);
             compras.Controls.Add(button12);
             compras.Location = new Point(4, 29);
             compras.Margin = new Padding(3, 4, 3, 4);
@@ -487,7 +450,7 @@
             // 
             button8.BackColor = Color.MediumPurple;
             button8.ForeColor = SystemColors.Window;
-            button8.Location = new Point(608, 61);
+            button8.Location = new Point(741, 61);
             button8.Margin = new Padding(3, 4, 3, 4);
             button8.Name = "button8";
             button8.Size = new Size(126, 31);
@@ -517,19 +480,6 @@
             textBox8.Size = new Size(298, 27);
             textBox8.TabIndex = 11;
             // 
-            // button10
-            // 
-            button10.BackColor = Color.MediumSlateBlue;
-            button10.ForeColor = SystemColors.Window;
-            button10.Location = new Point(741, 61);
-            button10.Margin = new Padding(3, 4, 3, 4);
-            button10.Name = "button10";
-            button10.Size = new Size(126, 31);
-            button10.TabIndex = 10;
-            button10.Text = "Abrir o XML";
-            button10.UseVisualStyleBackColor = false;
-            button10.Click += button10_Click;
-            // 
             // button12
             // 
             button12.BackColor = Color.Red;
@@ -554,9 +504,7 @@
             BackColor = Color.LightSkyBlue;
             ClientSize = new Size(911, 519);
             Controls.Add(tabControl1);
-            Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox1);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
@@ -572,14 +520,10 @@
             ((System.ComponentModel.ISupportInitialize)gridCompra).EndInit();
             ((System.ComponentModel.ISupportInitialize)veiculoBindingSource).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private TextBox textBox1;
         private Label label1;
-        private Label label2;
         private TextBox inputMarca;
         private ComboBox inputVeiculo;
         private TextBox inputAno;
@@ -606,13 +550,11 @@
         private Button button1;
         private Button button6;
         private TextBox textBox7;
-        private Button button5;
         private Button button3;
         private Button button7;
         private Button button8;
         private Button button9;
         private TextBox textBox8;
-        private Button button10;
         private Button button12;
         private TextBox inputPreco;
         private Label label9;

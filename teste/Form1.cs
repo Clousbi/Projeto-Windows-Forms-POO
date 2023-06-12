@@ -187,6 +187,13 @@ namespace teste
 
                 xmldoc.DocumentElement.AppendChild(novoVeiculo);
                 xmldoc.Save(caminho);
+                Form1_Load(null, null);
+                inputVeiculo.ResetText();
+                inputPreco.ResetText();
+                inputMarca.ResetText();
+                inputAno.ResetText();
+                inputTipoCombustivel.ResetText();
+                inputCor.ResetText();
             }
         }
 
@@ -486,7 +493,7 @@ namespace teste
 
                     // Salvar as alterações de volta para o arquivo XML
                     doc.Save(filePath);
-                    gridVendas.Rows.RemoveAt(gridCompra.SelectedRows[0].Index);
+                    Form1_Load(null,null);
                     Console.WriteLine("Veículo removido com sucesso!");
                 }
                 else
@@ -519,7 +526,7 @@ namespace teste
 
                     // Salvar as alterações de volta para o arquivo XML
                     doc.Save(filePath);
-                    gridCompra.Rows.RemoveAt(gridCompra.SelectedRows[0].Index);
+                    Form1_Load(null, null);
                     Console.WriteLine("Veículo removido com sucesso!");
                 }
                 else
@@ -527,6 +534,16 @@ namespace teste
                     Console.WriteLine("Veículo não encontrado!");
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            inputVeiculo.ResetText();
+            inputPreco.ResetText();
+            inputMarca.ResetText();
+            inputAno.ResetText();
+            inputTipoCombustivel.ResetText();
+            inputCor.ResetText();
         }
     }
 
